@@ -15,6 +15,8 @@ var config = {
     theme: 'dark',
     use3dTerrain: false, //set true for enabling 3D maps.
     auto: false,
+    footer: 'Source: source citations, etc. <br> Created using <a href="https://github.com/mapbox/storytelling" target="_blank">Mapbox Storytelling</a> template.',
+
     chapters: [
         {
             id: 'Overview-identifier',
@@ -36,7 +38,7 @@ var config = {
             onChapterExit: []
         },
         {
-            id: 'departuse-identifier',
+            id: 'departure-identifier',
             alignment: 'left',
             hidden: false,
             title: 'Departure From Tobruk, Libya',
@@ -85,16 +87,16 @@ var config = {
             onChapterExit: []
         },
         {
-            id: 'pylos-identifier',
+            id: 'distress-identifier',
             alignment: 'right',
             hidden: false,
-            title: 'Pylos',
+            title: 'First Distress Signals',
             image: 'assets/images/pylos.jpg',
-            description: 'On 14 June 2023, the fishing vessel Adriana — dangerously overcrowded with an estimated 700\–750 migrants and asylum seekers who had departed from Tobruk, Libya — capsized and sank about 80 km off Pylos, within Greece\’s search\‑and\‑rescue zone. Despite hours of prior monitoring by authorities and repeated signs the boat was in severe distress, it was not rescued in time. Only 104 people survived, while more than 600 died or went missing, making it one of the deadliest Mediterranean shipwrecks in recent years and raising serious questions about delayed intervention and failures in rescue obligations.',
+            description: 'By 13 June, NGOs, merchant vessels, and Frontex had begun detecting the Adriana. Multiple alerts noted the vessel was not moving, severely overcrowded, and unable to steer. Despite this, no rescue was ordered. Passengers later testified that people had already collapsed from dehydration.',
             location: {
-                center: [21.04, 36.18],
-                zoom: 7.5,
-                pitch: 40,
+                center: [21.3, 35.2],
+                zoom: 7,
+                pitch: 0,
                 bearing: 0,
                 // flyTo additional controls-
                 // These options control the flight curve, making it move
@@ -116,14 +118,14 @@ var config = {
             onChapterExit: []
         },
         {
-            id: 'Farmakonisi-identifier',
+            id: 'surveillance-identifier',
             alignment: 'left',
             hidden: false,
-            title: 'Farmakonisi',
+            title: 'Under Surveillance for 15 Hours',
             image: 'assets/images/farmakonisi.jpg',
-            description: 'Despite repeated alerts from Alarm Phone and other organisations, authorities waited hours before responding to a boat in clear distress. When help finally came, 14 migrants had already reached the shore on their own, and the body of a man who had died was found beside them. The delay occurred even though authorities had early, documented knowledge of the emergency. In the early hours of 20 January 2014, the small inflatable boat carrying 27 refugees — mainly families from Afghanistan, Syria and Palestine — sank near the Greek island of Farmakonisi. Although Greek authorities eventually carried out rescues, 11 people, including eight children and three women, lost their lives.',
+            description: 'For more than 15 hours, the Adriana remained under continuous monitoring by the Hellenic Coast Guard and by aerial surveillance. Despite visible signs of distress, authorities classified the situation as “not requiring rescue.” Survivors described this period as “waiting for death,” with the boat slowly drifting and tilting.',
             location: {
-                center: [27, 37.2832],
+                center: [21.35, 36.00],
                 zoom: 7.5,
                 pitch: 8.01,
                 bearing: 0.00
@@ -135,16 +137,16 @@ var config = {
             onChapterExit: []
         },
         {
-            id: 'Samos-identifier',
+            id: 'tow-identifier',
             alignment: 'right',
             hidden: false,
-            title: 'Samos',
+            title: 'The Tow Attempt',
             image: '',
-            description: 'After repeated alerts from Alarm Phone and other organisations, authorities responded only much later, despite having been informed hours earlier that a boat carrying migrants was in severe distress. By the time help arrived, 14 people had reached the shore on their own, and the body of a man who had died was found alongside them. The incident illustrates a dangerous pattern of delayed intervention even when authorities already possessed clear, timely knowledge that lives were at risk. In the early hours of 20 January 2014, the small inflatable boat carrying 27 refugees, mostly families from Afghanistan, Syria and Palestine, sank near the Greek island of Farmakonisi; 11 people died, including eight children and three women. The survivors later described long waits for rescue despite repeated warnings, reinforcing concerns about systemic failures in responding to distress at sea.',
+            description: 'Survivors reported that the Hellenic Coast Guard vessel PLS 920 approached and attempted to tow the Adriana with a rope. The tow was allegedly done at a sideways angle. This maneuver, combined with the extreme overcrowding and instability of the vessel, caused it to tilt sharply, then roll over completely into the sea around 2 a.m.',
             location: {
-                center: [27.08076693, 37.7743271],
-                zoom: 7.5,
-                pitch: 8.01,
+                center: [21.2340, 36.4125],
+                zoom: 9,
+                pitch: 0,
                 bearing: 0.00
             },
             mapAnimation: 'flyTo',
@@ -153,17 +155,36 @@ var config = {
             onChapterEnter: [],
             onChapterExit: []
         },
-                {
+        {
+            id: 'conditions-identifier',
+            alignment: 'right',
+            hidden: false,
+            title: 'Conditions On Board During the Sinking',
+            image: '',
+            description: 'The Adriana capsized in total darkness. With hundreds locked in the lower decks, escape was impossible. Survivors described hearing metal scrape, the deck shift suddenly, and the sound of people screaming underwater. Those on the upper deck were thrown into the sea. Many could not swim. Passengers said they had been without water for hours and were severely weakened before the sinking.',
+            location: {
+                center: [21.2340, 36.4125],
+                zoom: 10,
+                pitch: 0,
+                bearing: 0.00
+            },
+            mapAnimation: 'flyTo',
+            rotateAnimation: false,
+            callback: '',
+            onChapterEnter: [],
+            onChapterExit: []
+        },
+        {
             id: 'Pserimos-identifier',
             alignment: 'right',
             hidden: false,
             title: 'Pserimos',
             image: 'assets/images/Pserimos.jpg',
-            description: 'Twelve refugees traveling from Turkey were intercepted by the Greek coastguard. The refugees did not stop, and their boat collided with the patrol vessel two or three times. The coastguard opened fire: Belal Telo was shot in the head, surviving 14 months without the ability to eat or communicate except with his eyes before dying in December 2015. M.A. was shot in the shoulder and permanently lost the use of his arm. \n\n Greek internal investigations found no wrongdoing, and no trial took place. Belal Telo\’s family appealed to the European Court of Human Rights. On 16 January 2024, nearly ten years later, the ECHR ruled that Greece violated the right to life (Article 2), citing severe failures in the investigation—including lost evidence and procedural shortcomings. Greece was ordered to pay €80,000 in non\‑pecuniary damages to Belal Telo\’s family.',
+            description: 'For nearly two years, the case was slowed by procedural barriers. The Piraeus Naval Court initially archived the files, protecting high-ranking Coast Guard officials from scrutiny. Following a legal appeal by survivors, the Court of Revision issued a landmark order:Criminal prosecution for felony charges against four senior Hellenic Coast Guard officials, including the current Chief. Charges include: Felony endangerment (failure to rescue), Exposure of survivors (failure to assist after the capsizing), Multiple counts of negligent homicide through omission. The ruling marks a historic moment in Greek maritime accountability and signals the possibility of justice for the victims of the Adriana.',
             location: {
-                center: [27.17173851, 36.95042645],
-                zoom: 7.5,
-                pitch: 8.01,
+                center: [23.6410, 37.9475],
+                zoom: 11,
+                pitch: 0,
                 bearing: 0.00
             },
             mapAnimation: 'flyTo',

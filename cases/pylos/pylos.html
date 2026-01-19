@@ -44,6 +44,14 @@
             text-decoration: underline;
         }
 
+        
+        #topnav a.current {
+            font-weight: 700;
+            text-decoration: underline;
+            color: #ff8800;
+        }
+
+
         body {
             margin: 0;
             padding: 0;
@@ -186,7 +194,25 @@
     <div id="story"></div>
 
     <script src="./config.js"></script>
+    
     <script>
+                // Highlight current page in the top nav
+        (function highlightCurrentNav() {
+            const currentPath = window.location.pathname.replace(/\/+$/, '').split('/').pop(); // e.g. "pylos.html"
+            const links = document.querySelectorAll('#topnav a');
+
+            links.forEach(a => {
+                const hrefPath = new URL(a.getAttribute('href'), window.location.href)
+                    .pathname.replace(/\/+$/, '')
+                    .split('/')
+                    .pop();
+
+                if (hrefPath === currentPath) {
+                    a.classList.add('current');
+                }
+            });
+        })();
+
         var initLoad = true;
         var layerTypes = {
             'fill': ['fill-opacity'],
@@ -223,7 +249,7 @@
             });
         }
 
-                // ---- BUILD PATH FROM CHAPTER CENTERS ----
+        // ---- BUILD PATH FROM CHAPTER CENTERS ----
         const pathGeoJSON = {
         type: 'Feature',
         geometry: {
@@ -485,5 +511,6 @@
     </script>
 
 </body>
+
 
 </html>
