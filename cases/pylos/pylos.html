@@ -223,6 +223,16 @@
             });
         }
 
+                // ---- BUILD PATH FROM CHAPTER CENTERS ----
+        const pathGeoJSON = {
+        type: 'Feature',
+        geometry: {
+            type: 'LineString',
+            coordinates: config.chapters.map(c => c.location.center)
+        },
+        properties: {}
+        };
+
         var story = document.getElementById('story');
         var features = document.createElement('div');
         features.setAttribute('id', 'features');
@@ -337,6 +347,26 @@
 
 
         map.on("load", function () {
+
+            map.addSource('chapter-path', {
+                type: 'geojson',
+                data: pathGeoJSON
+            });
+
+            map.addLayer({
+                id: 'chapter-path-layer',
+                type: 'line',
+                source: 'chapter-path',
+                layout: {
+                'line-join': 'round',
+                'line-cap': 'round'
+                },
+                paint: {
+                'line-width': 3,
+                'line-color': '#ff8c00',
+                'line-opacity': 0.8
+                }
+            });
 
             // --- KEEP THIS EXACTLY AS IS ---
             if (config.use3dTerrain) {
