@@ -176,8 +176,8 @@
     
     <nav id="topnav">
         <ul>
-            <li><a href="cases/pylos/pylos.html">Pylos (Adriana)</a></li>
-            <li><a href="cases/farmakonisi/farmakonisi.html">Farmakonisi</a></li>
+            <li><a href="pylos.html">Pylos (Adriana)</a></li>
+            <li><a href="farmakonisi.html">Farmakonisi</a></li>
         </ul>
     </nav>
 
@@ -337,61 +337,6 @@
 
 
         map.on("load", function () {
-
-                            
-                // --- SAR ZONES SOURCE ---
-                map.addSource('med-sar-zones', {
-                type: 'geojson',
-                data: 'data/med_sar_zones.geojson'
-                });
-
-                // --- FILL LAYER ---
-                map.addLayer({
-                id: 'med-sar-fill',
-                type: 'fill',
-                source: 'med-sar-zones',
-                paint: {
-                    'fill-color': ['coalesce', ['get', 'fill'], '#ff8c00'],
-                    'fill-opacity': ['coalesce', ['get', 'fill-opacity'], 0.22]
-                }
-                });
-
-                // --- OUTLINE ---
-                map.addLayer({
-                id: 'med-sar-outline',
-                type: 'line',
-                source: 'med-sar-zones',
-                paint: {
-                    'line-color': ['coalesce', ['get', 'stroke'], '#ff8c00'],
-                    'line-width': ['coalesce', ['get', 'stroke-width'], 2],
-                    'line-opacity': 0.95
-                }
-                });
-
-                // --- LABELS (centered text) ---
-                map.addLayer({
-                id: 'med-sar-labels',
-                type: 'symbol',
-                source: 'med-sar-zones',
-                layout: {
-                    'text-field': [
-                    'format',
-                    ['get', 'name'], { 'font-scale': 1.0 }, '\n',
-                    ['get', 'authority'], { 'font-scale': 0.8 }
-                    ],
-                    'text-size': 12,
-                    'text-font': ['DIN Pro Medium', 'Arial Unicode MS Regular'],
-                    'text-justify': 'center',
-                    'text-anchor': 'center',
-                    'text-allow-overlap': false
-                },
-                paint: {
-                    'text-color': '#1a1a1a',
-                    'text-halo-color': '#ffffff',
-                    'text-halo-width': 1.2
-                }
-                });
-
 
             // --- KEEP THIS EXACTLY AS IS ---
             if (config.use3dTerrain) {

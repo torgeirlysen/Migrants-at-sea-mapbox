@@ -1,5 +1,5 @@
 var config = {
-    style: 'mapbox://styles/lrjacobs/cmke18zhh00g701sc3nm7fyi1',
+    // style: 'mapbox://styles/lrjacobs/cmke18zhh00g701sc3nm7fyi1',
     // leave commented to use Mapbox Standard Style
     accessToken: 'pk.eyJ1IjoibHJqYWNvYnMiLCJhIjoiY21rM3BoanV0MHBhYjNlcXk0OTZ1bXR5eiJ9.c9gJtz4_0bhKpi50XaKODg',
     showMarkers: false,
@@ -36,16 +36,16 @@ var config = {
             onChapterExit: []
         },
         {
-            id: 'Lampedusa-identifier',
-            alignment: 'right',
+            id: 'departuse-identifier',
+            alignment: 'left',
             hidden: false,
-            title: 'Lampedusa',
-            image: 'assets/images/lampedusa.jpg',
-            description: 'NGO Sea\‑Watch filed a criminal complaint accusing Italy\’s coastguard of delaying rescue efforts for nearly two days after spotting a migrant boat in distress near Lampedusa. According to Sea\‑Watch, the boat was detected early through aerial surveillance, yet no rescue vessels were dispatched until much later. During this period, conditions on board deteriorated severely, and by the time help arrived, 21 people had died. \n\n The complaint argues that these deaths could have been prevented had authorities acted when the distress was first identified, highlighting ongoing concerns about slow and selective responses to emergencies in the central Mediterranean. ',
+            title: 'Departure From Tobruk, Libya',
+            image: '',
+            description: 'The fishing vessel Adriana departed from Tobruk, Libya, in early June 2023. On board were 700–750 people, many from Pakistan, Syria, and Egypt. Most had spent days or weeks in dangerous smuggling warehouses before being forced onto the overcrowded trawler. Passengers described paying thousands of dollars for passage, believing this journey would bring them closer to safety in Europe.',
             location: {
-                center: [12.44648, 35.458895],
-                zoom: 7.5,
-                pitch: 40,
+                center: [23.9769, 32.0786],
+                zoom: 8,
+                pitch: 0,
                 bearing: 0
             },
             mapAnimation: 'flyTo',
@@ -66,16 +66,16 @@ var config = {
             ]
         },
         {
-            id: 'turkey-identifier',
+            id: 'international-identifier',
             alignment: 'left',
             hidden: false,
-            title: 'Turkey',
-            image: '',
-            description: 'A boat with 47 people sent distress signals within a SAR zone but was ignored by Italian and Maltese authorities relying on the Libyan coast guard to intervene. Only 17 survived when a commercial vessel eventually rescued them; 30 people died that could have been saved with timely state action. What this shows: deliberate delay/inaction in SAR leads directly to loss of life. ',
+            title: 'Entering International Waters',
+            image: 'images/ocean.png',
+            description: 'After leaving Libyan waters, the Adriana entered the Central Mediterranean, one of the world\’s deadliest migration routes. The ship was already in extremely poor condition. It had no functioning navigation system, almost no food or water left, and people were packed into the lower hull, engine room, and upper deck.',
             location: {
-                center: [27.1714101, 37.31969373],
-                zoom: 7.5,
-                pitch: 8.01,
+                center: [21.00, 34.00],
+                zoom: 6,
+                pitch: 0,
                 bearing: 0.00
             },
             mapAnimation: 'flyTo',
