@@ -154,12 +154,12 @@ var config = {
             onChapterExit: []
         },
                 {
-            id: 'Samos-identifier',
+            id: 'Pserimos-identifier',
             alignment: 'right',
             hidden: false,
-            title: 'Samos',
+            title: 'Pserimos',
             image: '',
-            description: 'A group of 14 migrants and the body of a man who died were found on shore after calls for rescue were only responded to much later. Alarm Phone and other organisations documented authorities being informed hours before action.What this shows: delayed response even when authorities had knowledge of distress. What happened: In the early hours of 20 January 2014, a small inflatable boat carrying 27 refugees — mainly families from Afghanistan, Syria and Palestine — sank in the Aegean Sea near the Greek island of Farmakonisi. The boat was found by Greek authorities in distress; rescues were carried out, but 11 people died, including eight children and three women.   ',
+            description: '12 refugees on a motorboat from Turkey to Greece are located by the greek coastguard. The motorboat was ordered to stop but did not comply. The motorboat collided with the PLS 1012 on two or three occasions. The coastguard then shot 20 times, 7 as a warning and 13 straight at the machine of the boat. Serian refugee Belal Telo was shot in the head, resulting in 14 months of him not being able to eat or to communicate other than with his eyes, and eventually his death in December 2015. Another refugee, M.A. was shot on his shoulder and has lost the ability to use his arm.\n\n Justice: Internal disciplinary investigations concluded that the coastguards were not at fault and the case did not go through a trial in Greece. Belal Telo\’s family filed an appeal at the European Court of Human Rights. Ten years later, 16 of January 2024, ECHR convicted Greece for violation of the right to life (article 2 of ECHR) because of the lethal injury of Belal and for the insufficient investigation of the incident from greek authorities. The court concluded that “the investigation carried out by the national authorities contained numerous shortcomings which resulted, among other weaknesses, in the loss of evidence and which rendered the investigation inappropriate”. It also ordered Greece to pay compensation of 80,000 euros to the family of Belal Tello, for non-pecuniary damage. ',
             location: {
                 center: [27.17173851, 36.95042645],
                 zoom: 7.5,
