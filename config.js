@@ -36,12 +36,12 @@ var config = {
             onChapterExit: []
         },
         {
-            id: 'lampedusa-identifier',
+            id: 'Lampedusa-identifier',
             alignment: 'right',
             hidden: false,
             title: 'Lampedusa',
-            image: '',
-            description: 'NGO Sea-Watch filed a criminal complaint alleging Italy’s coastguard waited two days before deploying rescue ships after spotting a migrant boat in distress near Lampedusa — contributing to 21 deaths.  ',
+            image: 'assets/images/lampedusa.jpg',
+            description: 'NGO Sea\‑Watch filed a criminal complaint accusing Italy\’s coastguard of delaying rescue efforts for nearly two days after spotting a migrant boat in distress near Lampedusa. According to Sea\‑Watch, the boat was detected early through aerial surveillance, yet no rescue vessels were dispatched until much later. During this period, conditions on board deteriorated severely, and by the time help arrived, 21 people had died. \n\n The complaint argues that these deaths could have been prevented had authorities acted when the distress was first identified, highlighting ongoing concerns about slow and selective responses to emergencies in the central Mediterranean. ',
             location: {
                 center: [12.44648, 35.458895],
                 zoom: 7.5,
@@ -89,8 +89,8 @@ var config = {
             alignment: 'right',
             hidden: false,
             title: 'Pylos',
-            image: ' ',
-            description: 'On June 14, 2023, the fishing vessel Adriana — massively overloaded with around 700–750 migrants and asylum seekers who had embarked from Tobruk, Libya — capsized and sank about 80 km off Pylos, Greece, in the Greek search-and-rescue (SAR) zone. Only 104 people survived; more than 600 died or remain missing, making it one of the deadliest migrant shipwrecks in the Mediterranean in recent memory.  ',
+            image: 'assets/images/pylos.jpg',
+            description: 'On 14 June 2023, the fishing vessel Adriana — dangerously overcrowded with an estimated 700\–750 migrants and asylum seekers who had departed from Tobruk, Libya — capsized and sank about 80 km off Pylos, within Greece\’s search\‑and\‑rescue zone. Despite hours of prior monitoring by authorities and repeated signs the boat was in severe distress, it was not rescued in time. Only 104 people survived, while more than 600 died or went missing, making it one of the deadliest Mediterranean shipwrecks in recent years and raising serious questions about delayed intervention and failures in rescue obligations.',
             location: {
                 center: [21.04, 36.18],
                 zoom: 7.5,
@@ -120,8 +120,8 @@ var config = {
             alignment: 'left',
             hidden: false,
             title: 'Farmakonisi',
-            image: '',
-            description: 'A group of 14 migrants and the body of a man who died were found on shore after calls for rescue were only responded to much later. Alarm Phone and other organisations documented authorities being informed hours before action.What this shows: delayed response even when authorities had knowledge of distress. What happened: In the early hours of 20 January 2014, a small inflatable boat carrying 27 refugees — mainly families from Afghanistan, Syria and Palestine — sank in the Aegean Sea near the Greek island of Farmakonisi. The boat was found by Greek authorities in distress; rescues were carried out, but 11 people died, including eight children and three women.   ',
+            image: 'assets/images/farmakonisi.jpg',
+            description: 'Despite repeated alerts from Alarm Phone and other organisations, authorities waited hours before responding to a boat in clear distress. When help finally came, 14 migrants had already reached the shore on their own, and the body of a man who had died was found beside them. The delay occurred even though authorities had early, documented knowledge of the emergency. In the early hours of 20 January 2014, the small inflatable boat carrying 27 refugees — mainly families from Afghanistan, Syria and Palestine — sank near the Greek island of Farmakonisi. Although Greek authorities eventually carried out rescues, 11 people, including eight children and three women, lost their lives.',
             location: {
                 center: [27, 37.2832],
                 zoom: 7.5,
@@ -158,7 +158,7 @@ var config = {
             alignment: 'right',
             hidden: false,
             title: 'Pserimos',
-            image: '',
+            image: 'assets/images/Pserimos.jpg',
             description: 'Twelve refugees traveling from Turkey were intercepted by the Greek coastguard. The refugees did not stop, and their boat collided with the patrol vessel two or three times. The coastguard opened fire: Belal Telo was shot in the head, surviving 14 months without the ability to eat or communicate except with his eyes before dying in December 2015. M.A. was shot in the shoulder and permanently lost the use of his arm. \n\n Greek internal investigations found no wrongdoing, and no trial took place. Belal Telo\’s family appealed to the European Court of Human Rights. On 16 January 2024, nearly ten years later, the ECHR ruled that Greece violated the right to life (Article 2), citing severe failures in the investigation—including lost evidence and procedural shortcomings. Greece was ordered to pay €80,000 in non\‑pecuniary damages to Belal Telo\’s family.',
             location: {
                 center: [27.17173851, 36.95042645],
