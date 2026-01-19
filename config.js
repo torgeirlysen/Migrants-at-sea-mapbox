@@ -153,6 +153,25 @@ var config = {
             onChapterEnter: [],
             onChapterExit: []
         },
+                {
+            id: 'Samos-identifier',
+            alignment: 'right',
+            hidden: false,
+            title: 'Samos',
+            image: '',
+            description: 'A group of 14 migrants and the body of a man who died were found on shore after calls for rescue were only responded to much later. Alarm Phone and other organisations documented authorities being informed hours before action.What this shows: delayed response even when authorities had knowledge of distress. What happened: In the early hours of 20 January 2014, a small inflatable boat carrying 27 refugees — mainly families from Afghanistan, Syria and Palestine — sank in the Aegean Sea near the Greek island of Farmakonisi. The boat was found by Greek authorities in distress; rescues were carried out, but 11 people died, including eight children and three women.   ',
+            location: {
+                center: [27.17173851, 36.95042645],
+                zoom: 7.5,
+                pitch: 8.01,
+                bearing: 0.00
+            },
+            mapAnimation: 'flyTo',
+            rotateAnimation: false,
+            callback: '',
+            onChapterEnter: [],
+            onChapterExit: []
+        },
         
     ]
 };
