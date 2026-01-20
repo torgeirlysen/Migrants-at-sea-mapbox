@@ -42,7 +42,7 @@ var config = {
             id: 'departure-identifier',
             alignment: 'left',
             hidden: false,
-            title: 'June 13: Departure From Tobruk, Libya',
+            title: 'June 13 07:00 : Departure From Tobruk, Libya',
             image: '',
             description: 'The fishing vessel Adriana departed from Tobruk, Libya, in early June 2023. On board were 700–750 people, many from Pakistan, Syria, and Egypt. Most had spent days or weeks in dangerous smuggling warehouses before being forced onto the overcrowded trawler. Passengers described paying thousands of dollars for passage, believing this journey would bring them closer to safety in Europe.',
             location: {
@@ -72,7 +72,7 @@ var config = {
             id: 'international-identifier',
             alignment: 'left',
             hidden: false,
-            title: 'Entering International Waters',
+            title: 'June 13 : Entering International Waters',
             image: 'images/ocean.png',
             description: 'After leaving Libyan waters, the Adriana entered the Central Mediterranean, one of the world\’s deadliest migration routes. The ship was already in extremely poor condition. It had no functioning navigation system, almost no food or water left, and people were packed into the lower hull, engine room, and upper deck.',
             location: {
@@ -123,7 +123,7 @@ var config = {
             alignment: 'left',
             hidden: false,
             title: 'Under Surveillance for 15 Hours',
-            image: 'assets/images/farmakonisi.jpg',
+            image: 'images/last-hours.jpeg',
             description: 'For more than 15 hours, the Adriana remained under continuous monitoring by the Hellenic Coast Guard and by aerial surveillance. Despite visible signs of distress, authorities classified the situation as “not requiring rescue.” Survivors described this period as “waiting for death,” with the boat slowly drifting and tilting.',
             location: {
                 center: [21.35, 36.00],
@@ -143,7 +143,7 @@ var config = {
             hidden: false,
             title: 'June 13, 23:45 : The Tow Attempt',
             image: '',
-            description: 'Survivors reported that the Hellenic Coast Guard vessel PLS 920 approached and attempted to tow the Adriana with a rope, allegedly toward Italian waters. The tow was allegedly done at a sideways angle, and at a high speed. This maneuver, combined with the extreme overcrowding and instability of the vessel, caused it to tilt sharply, then roll over completely into the sea around 2 a.m.',
+            description: 'Survivors report that the Hellenic Coast Guard vessel PPLS 920 approached and attached a rope to the Adriana, allegedly attempting to tow it toward Italian waters. Witnesses describe the tow being executed at a high speed and a dangerous sideways angle. This maneuver, acting on a vessel already critically overcrowded and unstable, reportedly caused the Adriana to tilt sharply. The destabilization proved fatal; the ship eventually rolled over completely and sank around 2 a.m. ',
             location: {
                 center: [21.2340, 36.4125],
                 zoom: 9,
@@ -162,7 +162,7 @@ var config = {
             hidden: false,
             title: 'June 14. 02.06 : Conditions On Board During the Sinking',
             image: '',
-            description: 'The Adriana capsized in total darkness. With hundreds locked in the lower decks, escape was impossible. Survivors described hearing metal scrape, the deck shift suddenly, and the sound of people screaming underwater. Those on the upper deck were thrown into the sea. Many could not swim. Passengers said they had been without water for hours and were severely weakened before the sinking.',
+            description: 'The Adriana capsized in total darkness. For the hundreds of people locked in the lower decks, escape was impossible. Survivors described a terrifying sequence: the screech of metal against metal, a sudden, violent shift of the deck, and then the screams of those trapped as the vessel went down. Passengers on the upper deck were thrown directly into the sea. Many, unable to swim and severely weakened after being without fresh water for days, struggled to stay afloat in the chaos.',
             location: {
                 center: [21.2340, 36.4125],
                 zoom: 10,
@@ -181,7 +181,32 @@ var config = {
             hidden: false,
             title: 'Piraeus Naval Court Orders Prosecution',
             image: '',
-            description: 'For nearly two years, the case was slowed by procedural barriers. The Piraeus Naval Court initially archived the files, protecting high-ranking Coast Guard officials from scrutiny. Following a legal appeal by survivors, the Court of Revision issued a landmark order:Criminal prosecution for felony charges against four senior Hellenic Coast Guard officials, including the current Chief. Charges include: Felony endangerment (failure to rescue), Exposure of survivors (failure to assist after the capsizing), Multiple counts of negligent homicide through omission. The ruling marks a historic moment in Greek maritime accountability and signals the possibility of justice for the victims of the Adriana.',
+            description: ` 
+            
+            <p>
+            For nearly two years, the case faced significant procedural hurdles. Initially, the Prosecutor of the Piraeus Naval Court had archived the files concerning the leadership of the Coast Guard. However, following a formal appeal by the survivors, a landmark order from the Prosecutor of the Court of Revision  overturned this. In a historic shift for Greek maritime law: 
+            </p>
+
+            <p>
+            Criminal Prosecution for Felonies: Criminal charges have been ordered against four senior officials of the Hellenic Coast Guard leadership, including the current Chief of the Body. 
+            </p>
+
+            <p>
+            Specific Charges: 
+            </p>
+
+            <p>
+            <b> 1. Exposure (Endangerment) as a Felony: </b> Failure to fulfill the legal obligation to rescue persons in distress, resulting in death. 
+            </p>
+
+            <p>
+            <b> 2. Exposure of survivors: </b> Neglecting the legal duty to aid those left helpless at sea. 
+            </p>
+
+            <p>    
+            <b> 3. Negligent Homicide: </b> Multiple counts of manslaughter through omission. 
+            </p>
+            `,
             location: {
                 center: [23.6410, 37.9475],
                 zoom: 11,
