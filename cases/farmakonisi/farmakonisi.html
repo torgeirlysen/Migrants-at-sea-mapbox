@@ -197,22 +197,27 @@
     <script src="./config.js"></script>
     
     <script>
-                // Highlight current page in the top nav
-        (function highlightCurrentNav() {
-            const currentPath = window.location.pathname.replace(/\/+$/, '').split('/').pop(); // e.g. "pylos.html"
-            const links = document.querySelectorAll('#topnav a');
-
-            links.forEach(a => {
-                const hrefPath = new URL(a.getAttribute('href'), window.location.href)
+        
+        // Highlight current page in the top nav
+        function highlightCurrentNav() {
+            const currentFile = window.location.pathname.replace(/\/+$/, '').split('/').pop();
+            document.querySelectorAll('#topnav a').forEach(a => {
+                const hrefFile = new URL(a.getAttribute('href'), window.location.href)
                     .pathname.replace(/\/+$/, '')
                     .split('/')
                     .pop();
 
-                if (hrefPath === currentPath) {
-                    a.classList.add('current');
-                }
+                if (hrefFile === currentFile) a.classList.add('current');
             });
-        })();
+        }
+
+        fetch('../../components/navbar.html')
+            .then(res => res.text())
+            .then(html => {
+                document.getElementById('navbar').innerHTML = html;
+                highlightCurrentNav();
+            });
+
 
         var initLoad = true;
         var layerTypes = {
@@ -232,13 +237,6 @@
             'full': 'fully'
         }
 
-        // Load navbar component, then highlight
-        fetch('../../components/navbar.html')
-            .then(res => res.text())
-            .then(html => {
-                document.getElementById('navbar').innerHTML = html;
-                highlightCurrentNav();
-            });
 
         function getLayerPaintType(layer) {
             var layerType = map.getLayer(layer).type;
