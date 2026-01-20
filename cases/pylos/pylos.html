@@ -200,7 +200,7 @@
     }
 
     // Adjust this if your folder depth changes
-    fetch('../../components/navbar.html')
+    fetch('../../components/navbar/index.html')
       .then(res => res.text())
       .then(html => {
         document.getElementById('navbar').innerHTML = html;
