@@ -356,9 +356,14 @@
             zoom: config.chapters[0].location.zoom,
             bearing: config.chapters[0].location.bearing,
             pitch: config.chapters[0].location.pitch,
-            interactive: false,
+            interactive: true,
             projection: config.projection
         });
+
+        // Enable user-friendly navigation controls (zoom buttons + compass).
+        map.addControl(new mapboxgl.NavigationControl(), 'top-right');
+        // Keep page scrolling smooth for the story; users can still zoom via buttons/pinch.
+        map.scrollZoom.disable();
 
         // Create a inset map if enabled in config.js
         if (config.inset) {
