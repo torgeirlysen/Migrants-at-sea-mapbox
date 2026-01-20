@@ -182,12 +182,7 @@
 
 <body>
     
-    <nav id="topnav">
-        <ul>
-            <li><a href="../pylos/pylos.html">Pylos (Adriana)</a></li>
-            <li><a href="farmakonisi.html">Farmakonisi</a></li>
-        </ul>
-    </nav>
+    <div id="navbar"></div>
 
 
     <div id="map"></div>
@@ -230,6 +225,14 @@
             'right': 'righty',
             'full': 'fully'
         }
+
+        // Load navbar component, then highlight
+        fetch('../../components/navbar.html')
+            .then(res => res.text())
+            .then(html => {
+                document.getElementById('navbar').innerHTML = html;
+                highlightCurrentNav();
+            });
 
         function getLayerPaintType(layer) {
             var layerType = map.getLayer(layer).type;

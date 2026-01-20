@@ -22,9 +22,9 @@ var config = {
             id: 'Overview-identifier',
             alignment: 'left',
             hidden: false,
-            title: 'Pylos Adriana: A Deadly Maritime Disaster',
+            title: 'Pserimos. September 22, 2014  ',
             image: '',
-            description: 'On the night of 14 June 2023, the fishing vessel Adriana capsized off the coast of Pylos, Greece, leading to one of the deadliest maritime disasters in recent Mediterranean history. Over 700 people, primarily from Pakistan, Syria, and Egypt, were on board when the overcrowded and unseaworthy vessel overturned during a failed tow attempt by the Hellenic Coast Guard. Despite multiple distress signals and hours of surveillance, no rescue was initiated until it was too late. The tragedy has sparked outrage and calls for accountability regarding the actions of the Greek authorities involved.',
+            description: '12 refugees on a motorboat from Turkey to Greece are located by the greek coastguard. The motorboat was ordered to stop but did not comply. The motorboat collided with the PLS 1012 on two or three occasions. The coastguard then shot 20 times, 7 as a warning and 13 straight at the machine of the boat. Serian refugee Belal Telo was shot in the head, resulting in 14 months of him not being able to eat or to communicate other than with his eyes, and eventually his death in December 2015. Another refugee, M.A. was shot on his shoulder and has lost the ability to use his arm. ',
             location: {
                 center: [12.612838, 34.347632],
                 zoom: 4,
@@ -142,7 +142,7 @@ var config = {
             hidden: false,
             title: 'June 13, 23:45 : The Tow Attempt',
             image: '',
-            description: 'Survivors reported that the Hellenic Coast Guard vessel PLS 920 approached and attempted to tow the Adriana with a rope, allegedly toward Italian waters. The tow was allegedly done at a sideways angle, and at a high speed. This maneuver, combined with the extreme overcrowding and instability of the vessel, caused it to tilt sharply, then roll over completely into the sea around 2 a.m.',
+            description: '',
             location: {
                 center: [21.2340, 36.4125],
                 zoom: 9,
@@ -161,7 +161,7 @@ var config = {
             hidden: false,
             title: 'June 14. 02.06 : Conditions On Board During the Sinking',
             image: '',
-            description: 'The Adriana capsized in total darkness. With hundreds locked in the lower decks, escape was impossible. Survivors described hearing metal scrape, the deck shift suddenly, and the sound of people screaming underwater. Those on the upper deck were thrown into the sea. Many could not swim. Passengers said they had been without water for hours and were severely weakened before the sinking.',
+            description: '',
             location: {
                 center: [21.2340, 36.4125],
                 zoom: 10,
@@ -180,7 +180,7 @@ var config = {
             hidden: false,
             title: 'Piraeus Naval Court Orders Prosecution',
             image: '',
-            description: 'For nearly two years, the case was slowed by procedural barriers. The Piraeus Naval Court initially archived the files, protecting high-ranking Coast Guard officials from scrutiny. Following a legal appeal by survivors, the Court of Revision issued a landmark order:Criminal prosecution for felony charges against four senior Hellenic Coast Guard officials, including the current Chief. Charges include: Felony endangerment (failure to rescue), Exposure of survivors (failure to assist after the capsizing), Multiple counts of negligent homicide through omission. The ruling marks a historic moment in Greek maritime accountability and signals the possibility of justice for the victims of the Adriana.',
+            description: '',
             location: {
                 center: [23.6410, 37.9475],
                 zoom: 11,

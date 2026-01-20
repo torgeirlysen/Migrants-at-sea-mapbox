@@ -174,12 +174,7 @@
 
 <body>
     
-    <nav id="topnav">
-        <ul>
-            <li><a href="cases/pylos/pylos.html">Pylos (Adriana)</a></li>
-            <li><a href="cases/farmakonisi/farmakonisi.html">Farmakonisi</a></li>
-        </ul>
-    </nav>
+    <div id="navbar"></div>
 
 
     <div id="map"></div>
@@ -187,6 +182,8 @@
 
     <script src="./config.js"></script>
     <script>
+
+        
         var initLoad = true;
         var layerTypes = {
             'fill': ['fill-opacity'],
@@ -204,6 +201,16 @@
             'right': 'righty',
             'full': 'fully'
         }
+
+        window.SITE_BASE = '/Migrants-at-sea-mapbox';
+
+        // Load navbar component, then highlight
+        fetch('../../components/navbar.html')
+            .then(res => res.text())
+            .then(html => {
+                document.getElementById('navbar').innerHTML = html;
+                highlightCurrentNav();
+            });
 
         function getLayerPaintType(layer) {
             var layerType = map.getLayer(layer).type;
