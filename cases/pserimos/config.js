@@ -3,6 +3,7 @@ var config = {
     // leave commented to use Mapbox Standard Style
     accessToken: 'pk.eyJ1IjoibHJqYWNvYnMiLCJhIjoiY21rM3BoanV0MHBhYjNlcXk0OTZ1bXR5eiJ9.c9gJtz4_0bhKpi50XaKODg',
     showMarkers: false,
+    showPath : false,
     markerColor: '#3FB1CE',
     //projection: 'equirectangular',
     //Read more about available projections here
@@ -26,8 +27,8 @@ var config = {
             image: '',
             description: '12 refugees on a motorboat from Turkey to Greece are located by the greek coastguard. The motorboat was ordered to stop but did not comply. The motorboat collided with the PLS 1012 on two or three occasions. The coastguard then shot 20 times, 7 as a warning and 13 straight at the machine of the boat. Serian refugee Belal Telo was shot in the head, resulting in 14 months of him not being able to eat or to communicate other than with his eyes, and eventually his death in December 2015. Another refugee, M.A. was shot on his shoulder and has lost the ability to use his arm. ',
             location: {
-                center: [12.612838, 34.347632],
-                zoom: 4,
+                center: [27.17173851, 36.95042645],
+                zoom: 7,
                 pitch: 0,
                 bearing: 0
             },
@@ -41,9 +42,9 @@ var config = {
             id: 'departure-identifier',
             alignment: 'left',
             hidden: false,
-            title: 'June 13: Departure From Tobruk, Libya',
+            title: 'Victim testimony',
             image: '',
-            description: 'The fishing vessel Adriana departed from Tobruk, Libya, in early June 2023. On board were 700–750 people, many from Pakistan, Syria, and Egypt. Most had spent days or weeks in dangerous smuggling warehouses before being forced onto the overcrowded trawler. Passengers described paying thousands of dollars for passage, believing this journey would bring them closer to safety in Europe.',
+            description: '“I didn’t expect this treatment when I escaped from the war in Syria to a European domain, who defends human rights. I couldn’t imagine that a person is worth as much as a bullet. That was very shocking for me. I escaped death and war to search for life. So, the realization that was waiting for me in that sea was death was truly astonishing” “It was very clear to the coastguards that on the boat there were only unarmed helpless people who were trying to escape war and find safety somewhere. That was very obvious to them, I was with my wife and my daughter and others, unfortunately, we were devastated truly when we saw a man get shot in the head. His face was full of blood.”  M.A. ',
             location: {
                 center: [23.9769, 32.0786],
                 zoom: 8,
