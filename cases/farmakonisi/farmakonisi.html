@@ -3,7 +3,7 @@
 
 <head>
     <meta charset='utf-8' />
-    <title>Mapbox Storytelling</title>
+    <title>Farmakonisi</title>
     <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
     <link rel="icon" type="image/x-icon"
         href="https://raw.githubusercontent.com/mapbox/assembly/publisher-staging/src/svgs/mapbox.svg">
@@ -43,6 +43,14 @@
         #topnav a:hover {
             text-decoration: underline;
         }
+
+        
+        #topnav a.current {
+            font-weight: 700;
+            text-decoration: underline;
+            color: #ff8800;
+        }
+
 
         body {
             margin: 0;
@@ -176,7 +184,7 @@
     
     <nav id="topnav">
         <ul>
-            <li><a href="pylos.html">Pylos (Adriana)</a></li>
+            <li><a href="../pylos/pylos.html">Pylos (Adriana)</a></li>
             <li><a href="farmakonisi.html">Farmakonisi</a></li>
         </ul>
     </nav>
@@ -186,7 +194,25 @@
     <div id="story"></div>
 
     <script src="./config.js"></script>
+    
     <script>
+                // Highlight current page in the top nav
+        (function highlightCurrentNav() {
+            const currentPath = window.location.pathname.replace(/\/+$/, '').split('/').pop(); // e.g. "pylos.html"
+            const links = document.querySelectorAll('#topnav a');
+
+            links.forEach(a => {
+                const hrefPath = new URL(a.getAttribute('href'), window.location.href)
+                    .pathname.replace(/\/+$/, '')
+                    .split('/')
+                    .pop();
+
+                if (hrefPath === currentPath) {
+                    a.classList.add('current');
+                }
+            });
+        })();
+
         var initLoad = true;
         var layerTypes = {
             'fill': ['fill-opacity'],
@@ -222,6 +248,16 @@
                 map.setPaintProperty(layer.layer, prop, layer.opacity, options);
             });
         }
+
+        // ---- BUILD PATH FROM CHAPTER CENTERS ----
+        const pathGeoJSON = {
+        type: 'Feature',
+        geometry: {
+            type: 'LineString',
+            coordinates: config.chapters.map(c => c.location.center)
+        },
+        properties: {}
+        };
 
         var story = document.getElementById('story');
         var features = document.createElement('div');
@@ -337,6 +373,26 @@
 
 
         map.on("load", function () {
+
+            map.addSource('chapter-path', {
+                type: 'geojson',
+                data: pathGeoJSON
+            });
+
+            map.addLayer({
+                id: 'chapter-path-layer',
+                type: 'line',
+                source: 'chapter-path',
+                layout: {
+                'line-join': 'round',
+                'line-cap': 'round'
+                },
+                paint: {
+                'line-width': 3,
+                'line-color': '#ff8c00',
+                'line-opacity': 0.8
+                }
+            });
 
             // --- KEEP THIS EXACTLY AS IS ---
             if (config.use3dTerrain) {
@@ -455,5 +511,6 @@
     </script>
 
 </body>
+
 
 </html>
