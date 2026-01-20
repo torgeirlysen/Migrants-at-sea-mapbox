@@ -1,0 +1,21 @@
+{
+  "redirects": [
+    {
+      "source": "/Migrants-at-sea-mapbox",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/Migrants-at-sea-mapbox/",
+      "destination": "/",
+      "permanent": true
+    }
+  ],
+  "rewrites": [
+    {
+      "source": "/Migrants-at-sea-mapbox/:path*",
+      "destination": "/:path*"
+    }
+  ]
+}
+
