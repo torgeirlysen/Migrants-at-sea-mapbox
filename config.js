@@ -15,9 +15,9 @@ window.HOME_CONFIG = {
   },
   sarZonesUrl: 'data/sar-zones-data.geojson',
   cases: [
-    { title: 'Pylos (Adriana)', url: '/Migrants-at-sea-mapbox/cases/pylos/pylos.html', coordinates: [21.2340, 36.4125] },
-    { title: 'Farmakonisi', url: '/Migrants-at-sea-mapbox/cases/farmakonisi/farmakonisi.html', coordinates: [14.612838, 37.347632] },
-    { title: 'Pserimos', url: '/Migrants-at-sea-mapbox/cases/pserimos/pserimos.html', coordinates: [12.612838, 34.347632] }
+    { title: 'Pylos (Adriana)', url: '/cases/pylos/pylos.html', coordinates: [21.2340, 36.4125] },
+    { title: 'Farmakonisi', url: '/cases/farmakonisi/farmakonisi.html', coordinates: [14.612838, 37.347632] },
+    { title: 'Pserimos', url: '/cases/pserimos/pserimos.html', coordinates: [12.612838, 34.347632] }
   ]
 };
 

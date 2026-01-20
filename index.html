@@ -80,17 +80,35 @@
     <div id="map"></div>
 
     <script>
-        // The navbar hard-codes links under this base path.
-        window.SITE_BASE = '/Migrants-at-sea-mapbox';
+        // Base path support:
+        // - Local/static servers:   http://localhost:3001/...
+        // - Vercel with rewrites:   http://<host>/Migrants-at-sea-mapbox/...
+        (function initSiteBase() {
+            const prefix = '/Migrants-at-sea-mapbox';
+            window.SITE_BASE = window.location.pathname.startsWith(prefix) ? prefix : '';
+        })();
     </script>
     <script src="./config.js"></script>
 
     <script>
         (async function initHome() {
+            function applyBaseToAnchors(rootEl) {
+                const base = window.SITE_BASE || '';
+                if (!base || !rootEl) return;
+                rootEl.querySelectorAll('a[href^="/"]').forEach(a => {
+                    const href = a.getAttribute('href');
+                    if (!href) return;
+                    if (href.startsWith(base + '/')) return;
+                    a.setAttribute('href', base + href);
+                });
+            }
+
             // Load navbar component (best-effort)
             try {
-                const res = await fetch(window.SITE_BASE + '/components/navbar.html');
-                document.getElementById('navbar').innerHTML = await res.text();
+                const res = await fetch(window.SITE_BASE + '/components/navbar');
+                const navbarEl = document.getElementById('navbar');
+                navbarEl.innerHTML = await res.text();
+                applyBaseToAnchors(navbarEl);
             } catch (e) {
                 console.warn('Navbar failed to load:', e);
             }
@@ -176,11 +194,13 @@
                 }, sarBeforeId);
 
                 // --- Case markers (click to open story) ---
+                const base = window.SITE_BASE || '';
+                const withBase = (url) => (typeof url === 'string' && url.startsWith('/') ? base + url : url);
                 const casesFC = {
                     type: 'FeatureCollection',
                     features: (cfg.cases || []).map(c => ({
                         type: 'Feature',
-                        properties: { title: c.title, url: c.url },
+                        properties: { title: c.title, url: withBase(c.url) },
                         geometry: { type: 'Point', coordinates: c.coordinates }
                     }))
                 };
