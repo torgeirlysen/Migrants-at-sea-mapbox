@@ -264,6 +264,35 @@ This will ensure that the map appears correctly when the story page loads. To ad
 
 Host the `index.html` and `config.js` files in the same directory in a web-accessible location. If you don't know where to start, look into GitHub Pages or Netlify.
 
+### Vercel
+
+This repo is a **static site** (no build step), so you can deploy it to Vercel as-is.
+
+**Option A (recommended for this repo as-is): keep the existing `/Migrants-at-sea-mapbox/...` links working on Vercel**
+
+This repo includes a `vercel.json` that rewrites:
+- `/Migrants-at-sea-mapbox/<anything>` → `/<anything>`
+
+So the hard-coded links in `components/navbar.html` will work on Vercel without changing your HTML.
+
+**Deploy via Vercel UI**
+- Import the Git repository in Vercel (**New Project**)
+- Framework Preset: **Other**
+- Build Command: **leave empty**
+- Output Directory: **leave empty**
+- Deploy
+
+After deploy, both of these will work:
+- `/<root>` (serves `index.html`)
+- `/Migrants-at-sea-mapbox/cases/pylos/pylos.html` (and the other case pages)
+
+**Deploy via Vercel CLI**
+
+From the repo root:
+```
+vercel
+```
+
 ## Built With
 
 - Mapbox GL JS
