@@ -44,6 +44,12 @@
             text-decoration: underline;
         }
 
+        /* Push Mapbox controls below the fixed top navbar */
+        .mapboxgl-ctrl-top-right,
+        .mapboxgl-ctrl-top-left {
+            top: 70px !important; /* tweak if navbar height changes */
+        }
+
         body {
             margin: 0;
             padding: 0;
