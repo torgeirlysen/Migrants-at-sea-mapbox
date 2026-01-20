@@ -23,7 +23,7 @@ var config = {
             id: 'Overview-identifier',
             alignment: 'left',
             hidden: false,
-            title: 'Pylos Adriana: A Deadly Maritime Disaster',
+            title: '14 June 2023: The Adriana Shipwreck Off Pylos, Greece',
             image: '',
             description: 'On the night of 14 June 2023, the fishing vessel Adriana capsized off the coast of Pylos, Greece, leading to one of the deadliest maritime disasters in recent Mediterranean history. Over 700 people, primarily from Pakistan, Syria, and Egypt, were on board when the overcrowded and unseaworthy vessel overturned during a failed tow attempt by the Hellenic Coast Guard. Despite multiple distress signals and hours of surveillance, no rescue was initiated until it was too late. The tragedy has sparked outrage and calls for accountability regarding the actions of the Greek authorities involved.',
             location: {
@@ -176,8 +176,27 @@ var config = {
             onChapterExit: []
         },
         {
+            id: 'Kalamata-identifier',
+            alignment: 'left',
+            hidden: false,
+            title: 'May 21 2024: Kalamata Court Dismisses Charges Against Survivors',
+            image: '',
+            description:'On 21 May, the criminal court in Kalamata dismissed a case against nine survivors who were accused of smuggling and causing the shipwreck, among other serious charges, and had been detained for 11 months at the time of the trial. Amnesty International and Human Rights Watch had expressed concerns over the fairness of the trial, saying that the case was based on incomplete and questionable evidence given that the investigation into the role of the Coast Guard has not yet been completed.',   
+            location: {
+                center: [22.1144, 37.0366],
+                zoom: 11,
+                pitch: 0,
+                bearing: 0.00
+            },
+            mapAnimation: 'flyTo',
+            rotateAnimation: false,
+            callback: '',
+            onChapterEnter: [],
+            onChapterExit: []
+        },
+        {
             id: 'Piraeus-identifier',
-            alignment: 'right',
+            alignment: 'bottom',
             hidden: false,
             title: 'Piraeus Naval Court Orders Prosecution',
             image: '',
