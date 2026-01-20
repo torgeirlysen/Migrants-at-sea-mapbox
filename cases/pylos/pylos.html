@@ -300,7 +300,7 @@
 
       container.setAttribute('id', record.id);
       container.classList.add('step');
-      if (idx === 0) container.classList.add('active');
+      if (idx === 1) container.classList.add('active');
 
       chapter.classList.add(config.theme);
       container.appendChild(chapter);
@@ -332,10 +332,10 @@
     map = new mapboxgl.Map({
       container: 'map',
       style: config.style,
-      center: config.chapters[0].location.center,
-      zoom: config.chapters[0].location.zoom,
-      bearing: config.chapters[0].location.bearing,
-      pitch: config.chapters[0].location.pitch,
+      center: config.chapters[1].location.center,
+      zoom: config.chapters[1].location.zoom,
+      bearing: config.chapters[1].location.bearing,
+      pitch: config.chapters[1].location.pitch,
       interactive: true,
       projection: config.projection
     });
@@ -357,7 +357,7 @@
     var marker;
     if (config.showMarkers) {
       marker = new mapboxgl.Marker({ color: config.markerColor });
-      marker.setLngLat(config.chapters[0].location.center).addTo(map);
+      marker.setLngLat(config.chapters[1].location.center).addTo(map);
     }
 
     // Scrollama
@@ -371,7 +371,7 @@
           type: 'Feature',
           geometry: {
             type: 'LineString',
-            coordinates: config.chapters.map(c => c.location.center)
+            coordinates: config.chapters.slice(1).map(c => c.location.center)
           },
           properties: {}
         };
@@ -458,17 +458,19 @@
           map[chapter.mapAnimation || 'flyTo'](chapter.location);
 
           // Move highlight point to chapter center
-          map.getSource('chapter-highlight').setData({
-            type: 'FeatureCollection',
-            features: [{
-              type: 'Feature',
-              geometry: {
-                type: 'Point',
-                coordinates: chapter.location.center
-              },
-              properties: {}
-            }]
-          });
+          if (!chapter.hidden) {
+            map.getSource('chapter-highlight').setData({
+              type: 'FeatureCollection',
+              features: [{
+                type: 'Feature',
+                geometry: {
+                  type: 'Point',
+                  coordinates: chapter.location.center
+                },
+                properties: {}
+              }]
+            });
+          }
 
           if (config.showMarkers && marker) marker.setLngLat(chapter.location.center);
 
