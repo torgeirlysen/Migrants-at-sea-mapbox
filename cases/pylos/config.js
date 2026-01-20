@@ -22,7 +22,7 @@ var config = {
         {
             id: 'Overview-identifier',
             alignment: 'left',
-            hidden: false,
+            hidden: true,
             title: 'Pylos Adriana: A Deadly Maritime Disaster',
             image: '',
             description: 'On the night of 14 June 2023, the fishing vessel Adriana capsized off the coast of Pylos, Greece, leading to one of the deadliest maritime disasters in recent Mediterranean history. Over 700 people, primarily from Pakistan, Syria, and Egypt, were on board when the overcrowded and unseaworthy vessel overturned during a failed tow attempt by the Hellenic Coast Guard. Despite multiple distress signals and hours of surveillance, no rescue was initiated until it was too late. The tragedy has sparked outrage and calls for accountability regarding the actions of the Greek authorities involved.',
