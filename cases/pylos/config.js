@@ -92,7 +92,7 @@ var config = {
             alignment: 'right',
             hidden: false,
             title: 'June 13, 10:35 : First Distress Signals',
-            image: 'assets/images/pylos.jpg',
+            image: 'images/pylos.jpg',
             description: 'At around 10:35 p.m. on June 13, the Adriana began sending distress signals via satellite phone and radio, reporting engine failure and water ingress. Passengers described panic as the boat started taking on water. The Hellenic Coast Guard received multiple distress calls but classified the situation as “not requiring rescue,” citing the vessel’s location in international waters and its proximity to Greek territory.',
             location: {
                 center: [21.00942, 35.95138],
@@ -123,7 +123,7 @@ var config = {
             alignment: 'left',
             hidden: false,
             title: 'Under Surveillance for 15 Hours',
-            image: 'images/last-hours.jpeg',
+            image: 'images/last-hours.jpg',
             description: 'For more than 15 hours, the Adriana remained under continuous monitoring by the Hellenic Coast Guard and by aerial surveillance. Despite visible signs of distress, authorities classified the situation as “not requiring rescue.” Survivors described this period as “waiting for death,” with the boat slowly drifting and tilting.',
             location: {
                 center: [21.35, 36.00],
@@ -146,7 +146,7 @@ var config = {
             description: 'Survivors report that the Hellenic Coast Guard vessel PPLS 920 approached and attached a rope to the Adriana, allegedly attempting to tow it toward Italian waters. Witnesses describe the tow being executed at a high speed and a dangerous sideways angle. This maneuver, acting on a vessel already critically overcrowded and unstable, reportedly caused the Adriana to tilt sharply. The destabilization proved fatal; the ship eventually rolled over completely and sank around 2 a.m. ',
             location: {
                 center: [21.2340, 36.4125],
-                zoom: 9,
+                zoom: 7,
                 pitch: 0,
                 bearing: 0.00
             },
@@ -165,7 +165,7 @@ var config = {
             description: 'The Adriana capsized in total darkness. For the hundreds of people locked in the lower decks, escape was impossible. Survivors described a terrifying sequence: the screech of metal against metal, a sudden, violent shift of the deck, and then the screams of those trapped as the vessel went down. Passengers on the upper deck were thrown directly into the sea. Many, unable to swim and severely weakened after being without fresh water for days, struggled to stay afloat in the chaos.',
             location: {
                 center: [21.2340, 36.4125],
-                zoom: 10,
+                zoom: 5,
                 pitch: 0,
                 bearing: 0.00
             },
