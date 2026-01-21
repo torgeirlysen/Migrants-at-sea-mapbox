@@ -77,7 +77,7 @@ var config = {
             description: 'Internal disciplinary investigations concluded that the coastguards were not at fault and the case did not go through a trial in Greece. Belal Telo’s family filed an appeal at the European Court of Human Rights. Ten years later, 16 of January 2024, ECHR convicted Greece for violation of the right to life (article 2 of ECHR) because of the lethal injury of Belal and for the insufficient investigation of the incident from greek authorities. The court concluded that “the investigation carried out by the national authorities contained numerous shortcomings which resulted, among other weaknesses, in the loss of evidence and which rendered the investigation inappropriate”. It also ordered Greece to pay compensation of 80,000 euros to the family of Belal Tello, for non-pecuniary damage.',
             location: {
                 center: [21.8243, 39.0742],
-                zoom: 8,
+                zoom: 4,
                 pitch: 0,
                 bearing: 0.00
             },
