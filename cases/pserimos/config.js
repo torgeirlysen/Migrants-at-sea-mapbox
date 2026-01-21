@@ -23,7 +23,7 @@ var config = {
             id: 'Overview-identifier',
             alignment: 'left',
             hidden: false,
-            title: 'Pserimos. September 22, 2014  ',
+            title: '22 September 2014 : Pserimos - Greek Coast Guard shoots at refugee boat, killing one person',
             image: '',
             description: '12 refugees on a motorboat from Turkey to Greece are located by the greek coastguard. The motorboat was ordered to stop but did not comply. The motorboat collided with the PLS 1012 on two or three occasions. The coastguard then shot 20 times, 7 as a warning and 13 straight at the machine of the boat. Serian refugee Belal Telo was shot in the head, resulting in 14 months of him not being able to eat or to communicate other than with his eyes, and eventually his death in December 2015. Another refugee, M.A. was shot on his shoulder and has lost the ability to use his arm. ',
             location: {
@@ -43,7 +43,7 @@ var config = {
             alignment: 'right',
             hidden: false,
             title: 'Victim testimony',
-            image: 'images/Victim.jpg',
+            image: '',
             description: '“I didn’t expect this treatment when I escaped from the war in Syria to a European domain, who defends human rights. I couldn’t imagine that a person is worth as much as a bullet. That was very shocking for me. I escaped death and war to search for life. So, the realization that was waiting for me in that sea was death was truly astonishing” “It was very clear to the coastguards that on the boat there were only unarmed helpless people who were trying to escape war and find safety somewhere. That was very obvious to them, I was with my wife and my daughter and others, unfortunately, we were devastated truly when we saw a man get shot in the head. His face was full of blood.”  M.A. ',
             location: {
                 center: [27.17173851, 36.95042645],
@@ -72,12 +72,12 @@ var config = {
             id: 'Justice-identifier',
             alignment: 'left',
             hidden: false,
-            title: 'Justice',
+            title: '16 January 2024 : Justice',
             image: '',
-            description: 'Internal disciplinary investigations concluded that the coastguards were not at fault and the case did not go through a trial in Greece. Belal Telo’s family filed an appeal at the European Court of Human Rights. Ten years later, 16 of January 2024, ECHR convicted Greece for violation of the right to life (article 2 of ECHR) because of the lethal injury of Belal and for the insufficient investigation of the incident from greek authorities. The court concluded that “the investigation carried out by the national authorities contained numerous shortcomings which resulted, among other weaknesses, in the loss of evidence and which rendered the investigation inappropriate”. It also ordered Greece to pay compensation of 80,000 euros to the family of Belal Tello, for non-pecuniary damage. ',
+            description: 'Internal disciplinary investigations concluded that the coastguards were not at fault and the case did not go through a trial in Greece. Belal Telo’s family filed an appeal at the European Court of Human Rights. Ten years later, 16 of January 2024, ECHR convicted Greece for violation of the right to life (article 2 of ECHR) because of the lethal injury of Belal and for the insufficient investigation of the incident from greek authorities. The court concluded that “the investigation carried out by the national authorities contained numerous shortcomings which resulted, among other weaknesses, in the loss of evidence and which rendered the investigation inappropriate”. It also ordered Greece to pay compensation of 80,000 euros to the family of Belal Tello, for non-pecuniary damage.',
             location: {
-                center: [27.17173851, 36.95042645],
-                zoom: 8,
+                center: [21.8243, 39.0742],
+                zoom: 4,
                 pitch: 0,
                 bearing: 0.00
             },
