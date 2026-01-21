@@ -21,7 +21,7 @@ var config = {
             id: 'Overview-identifier',
             alignment: 'left',
             hidden: false,
-            title: 'Farmakonisi. January 20, 2014 - A Deadly Boat Capsize',
+            title: 'January 20, 2014 - Farmakonisi: A Deadly Boat Capsize',
             image: '',
             description: `
             
@@ -39,7 +39,7 @@ var config = {
 
             `,
             location: {
-                center: [14.612838, 37.347632],
+                center: [27.0883, 37.2830],
                 zoom: 4,
                 pitch: 0,
                 bearing: 0
@@ -85,7 +85,7 @@ var config = {
             
             `,
             location: {
-                center: [14.612838, 37.347632],
+                center: [27.0883, 37.2830],
                 zoom: 6,
                 pitch: 0,
                 bearing: 0
@@ -118,7 +118,7 @@ var config = {
 
             `,
             location: {
-                center: [14.612838, 37.347632],
+                center: [27.0883, 37.2830],
                 zoom: 4,
                 pitch: 0,
                 bearing: 0
