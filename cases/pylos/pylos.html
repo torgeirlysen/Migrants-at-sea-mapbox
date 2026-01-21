@@ -190,6 +190,25 @@
   <script src="./config.js"></script>
 
   <script>
+    // Base path support:
+    // - Local/static servers:   http://localhost:3001/...
+    // - Vercel with rewrites:   http://<host>/Migrants-at-sea-mapbox/...
+    (function initSiteBase() {
+      const prefix = '/Migrants-at-sea-mapbox';
+      window.SITE_BASE = window.location.pathname.startsWith(prefix) ? prefix : '';
+    })();
+
+    function applyBaseToAnchors(rootEl) {
+      const base = window.SITE_BASE || '';
+      if (!base || !rootEl) return;
+      rootEl.querySelectorAll('a[href^="/"]').forEach(a => {
+        const href = a.getAttribute('href');
+        if (!href) return;
+        if (href.startsWith(base + '/')) return;
+        a.setAttribute('href', base + href);
+      });
+    }
+
     // -------- NAVBAR INJECTION + ACTIVE LINK HIGHLIGHT --------
     function highlightCurrentNav() {
       const currentPath = window.location.pathname.replace(/\/+$/, '');
@@ -203,7 +222,9 @@
     fetch('../../components/navbar/index.html')
       .then(res => res.text())
       .then(html => {
-        document.getElementById('navbar').innerHTML = html;
+        const navbarEl = document.getElementById('navbar');
+        navbarEl.innerHTML = html;
+        applyBaseToAnchors(navbarEl);
         highlightCurrentNav();
       });
 
