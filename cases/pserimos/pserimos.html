@@ -372,6 +372,7 @@
 
         // Enable user-friendly navigation controls (zoom buttons + compass).
         map.addControl(new mapboxgl.NavigationControl(), 'top-right');
+        map.scrollZoom.enable();
 
         // Create a inset map if enabled in config.js
         if (config.inset) {
