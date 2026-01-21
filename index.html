@@ -120,10 +120,15 @@
 
         /* Long home intro text: keep it readable on smaller screens */
         #home-info .dark {
-            background-color: rgba(68, 68, 68, 0.85); /* slightly more transparent than case pages */
+            background-color: rgba(68, 68, 68, 0.85); /* as opaque as before */
             max-height: calc(100vh - 210px); /* navbar + footer breathing room */
             overflow-y: auto;
             -webkit-overflow-scrolling: touch;
+        }
+
+        #home-info h2 {
+            text-align: center;
+            font-size: 36px;
         }
 
         /* --- Footer style matching the case pages (but fixed to bottom on Home) --- */
@@ -171,8 +176,8 @@
     <div id="story">
         <div id="features">
             <div id="home-info" class="step active lefty">
+                <h2>The Treacherous Journey</h2>
                 <div class="dark">
-                    <h2>The Treacherous Journey</h2>
                     <p><strong>Every year, tens of thousands of people attempt the sea crossing to Europe in small, overcrowded boats.</strong> In 2024, UNHCR recorded about 199,400 arrivals to Europe by sea, and about 3,580 people dead or missing along the Mediterranean and West Africa Atlantic routes. Many deaths are never witnessed or confirmed, so any total is likely an undercount (United Nations High Commissioner for Refugees, 2026).</p>
                     <p>This map introduces the first chapter of our project: the treacherous journey across the Mediterranean Sea and the hostile borders that meet those who cross it. It shows the main maritime corridor and the Search and Rescue (SAR) regions that divide responsibility for coordinating rescues. These boundaries influence who is expected to respond, how fast help arrives, and where survivors are taken.</p>
                     <p>We focus on three cases in which injustice was caused by the abuse of authority by coast guards, delayed rescue efforts, or failures to treat situations as SAR priorities, cases that raise questions about duty, accountability, and responsibility at sea.</p>
