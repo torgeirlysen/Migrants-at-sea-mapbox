@@ -163,10 +163,15 @@
 
         /* Long home intro text: keep it readable on smaller screens */
         #home-info .dark {
-            background-color: rgba(68, 68, 68, 0.85); /* slightly more transparent than case pages */
+            background-color: rgba(68, 68, 68, 0.85); /* as opaque as before */
             max-height: calc(100vh - 210px); /* navbar + footer breathing room */
             overflow-y: auto;
             -webkit-overflow-scrolling: touch;
+        }
+
+        #home-info h2 {
+            text-align: center;
+            font-size: 36px;
         }
 
         /* --- Footer style matching the case pages (but fixed to bottom on Home) --- */
