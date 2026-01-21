@@ -21,7 +21,7 @@ var config = {
             id: 'Overview-identifier',
             alignment: 'left',
             hidden: false,
-            title: 'January 20, 2014 - Farmakonisi: A Deadly Boat Capsize',
+            title: '20 January 2014 - Farmakonisi: A Deadly Boat Capsize',
             image: '',
             description: `
             
