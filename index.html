@@ -79,6 +79,11 @@
             pointer-events: none; /* allow map interaction except inside the card */
         }
 
+        #home-info {
+            position: relative;
+            pointer-events: auto;
+        }
+
         #features {
             padding-top: 90px; /* below navbar */
             padding-bottom: 0;
@@ -116,6 +121,44 @@
             font-size: 13px;
             border-radius: 8px;
             pointer-events: auto; /* clickable links inside card */
+        }
+
+        /* Slightly tighter padding on the home info card */
+        #home-info .home-content {
+            padding: 20px 30px;
+        }
+
+        .home-toggle {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            z-index: 2;
+            padding: 6px 10px;
+            border-radius: 999px;
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            background: rgba(0, 0, 0, 0.35);
+            color: #fafafa;
+            font-size: 12px;
+            cursor: pointer;
+            pointer-events: auto;
+        }
+
+        .home-toggle:hover {
+            background: rgba(0, 0, 0, 0.55);
+        }
+
+        #home-info.is-collapsed .home-body {
+            display: none;
+        }
+
+        #home-info.is-collapsed .home-content {
+            padding: 10px 16px; /* tighter when only the title is shown */
+        }
+
+        #home-info.is-collapsed .home-content h2 {
+            margin: 0;
+            font-size: 18px;
+            line-height: 22px;
         }
 
         /* Long home intro text: keep it readable on smaller screens */
@@ -260,11 +303,16 @@
     <div id="story">
         <div id="features">
             <div id="home-info" class="step active lefty">
-                <div class="dark">
+                <button id="home-info-toggle" class="home-toggle" type="button" aria-expanded="true">
+                    Hide info
+                </button>
+                <div class="dark home-content">
                     <h2>The Treacherous Journey</h2>
-                    <p><strong>Every year, tens of thousands of people attempt the sea crossing to Europe in small, overcrowded boats.</strong> In 2024, UNHCR recorded about 199,400 arrivals to Europe by sea, and about 3,580 people dead or missing along the Mediterranean and West Africa Atlantic routes. Many deaths are never witnessed or confirmed, so any total is likely an undercount (United Nations High Commissioner for Refugees, 2026).</p>
-                    <p>This map introduces the first chapter of our project: the treacherous journey across the Mediterranean Sea and the hostile borders that meet those who cross it. It shows the main maritime corridor and the Search and Rescue (SAR) regions that divide responsibility for coordinating rescues. These boundaries influence who is expected to respond, how fast help arrives, and where survivors are taken.</p>
-                    <p>We focus on three cases in which injustice was caused by the abuse of authority by coast guards, delayed rescue efforts, or failures to treat situations as SAR priorities, cases that raise questions about duty, accountability, and responsibility at sea.</p>
+                    <div class="home-body">
+                        <p><strong>Every year, tens of thousands of people attempt the sea crossing to Europe in small, overcrowded boats.</strong> In 2024, UNHCR recorded about 199,400 arrivals to Europe by sea, and about 3,580 people dead or missing along the Mediterranean and West Africa Atlantic routes. Many deaths are never witnessed or confirmed, so any total is likely an undercount (United Nations High Commissioner for Refugees, 2026).</p>
+                        <p>This map introduces the first chapter of our project: the treacherous journey across the Mediterranean Sea and the hostile borders that meet those who cross it. It shows the main maritime corridor and the Search and Rescue (SAR) regions that divide responsibility for coordinating rescues. These boundaries influence who is expected to respond, how fast help arrives, and where survivors are taken.</p>
+                        <p>We focus on three cases in which injustice was caused by the abuse of authority by coast guards, delayed rescue efforts, or failures to treat situations as SAR priorities, cases that raise questions about duty, accountability, and responsibility at sea.</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -309,6 +357,17 @@
                     if (!href) return;
                     if (href.startsWith(base + '/')) return;
                     a.setAttribute('href', base + href);
+                });
+            }
+
+            const infoPanel = document.getElementById('home-info');
+            const infoToggle = document.getElementById('home-info-toggle');
+            if (infoPanel && infoToggle) {
+                infoToggle.addEventListener('click', () => {
+                    const isCollapsed = infoPanel.classList.toggle('is-collapsed');
+                    infoToggle.textContent = isCollapsed ? 'Show info' : 'Hide info';
+                    infoToggle.setAttribute('aria-expanded', isCollapsed ? 'false' : 'true');
+                    positionLegendAboveFooter();
                 });
             }
 
