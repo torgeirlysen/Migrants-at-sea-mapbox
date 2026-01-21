@@ -86,7 +86,7 @@
 
         #features {
             padding-top: 90px; /* below navbar */
-            padding-bottom: 0;
+            padding-bottom: 10vh;
         }
 
         .centered {
@@ -111,7 +111,7 @@
         }
 
         .step {
-            padding-bottom: 0; /* home: no scroll story */
+            padding-bottom: 50vh; /* match case pages: footer sits after scroll content */
             opacity: 0.95;
         }
 
@@ -174,32 +174,6 @@
             font-size: 36px;
         }
 
-        /* --- Footer style matching the case pages (but fixed to bottom on Home) --- */
-        #footer {
-            width: 100%;
-            min-height: 5vh;
-            padding-top: 2vh;
-            padding-bottom: 2vh;
-            text-align: center;
-            line-height: 25px;
-            font-size: 13px;
-            position: fixed;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            z-index: 5;
-            pointer-events: none; /* don't block map; links re-enable below */
-        }
-
-        #footer a {
-            pointer-events: auto;
-        }
-
-        /* Slight transparency for the home footer panel */
-        #footer.dark {
-            background-color: rgba(68, 68, 68, 0.85);
-        }
-
         @media (max-width: 750px) {
             .centered,
             .lefty {
@@ -213,7 +187,7 @@
         .map-legend {
             position: fixed;
             right: 14px;
-            bottom: 92px; /* keep clear of fixed footer */
+            bottom: 14px;
             z-index: 6;
             pointer-events: auto;
             color: #fafafa;
@@ -273,7 +247,7 @@
             .map-legend {
                 left: 10px;
                 right: 10px;
-                bottom: 96px;
+                bottom: 16px;
                 max-width: none;
             }
         }
@@ -323,13 +297,6 @@
         </div>
     </div>
 
-    <div id="footer" class="dark">
-        <p style="margin:0;">
-            SAR = Search and Rescue. SRR = Search and Rescue Region (the area a state is responsible for coordinating rescue).<br>
-            SAR zones/SRR boundaries are shown as shaded regions (from the <a href="https://gisis.imo.org/Public/" target="_blank" rel="noopener noreferrer">IMO GISIS</a> Global SAR Plan).<br>
-        </p>
-    </div>
-
     <script>
         // Base path support:
         // - Local/static servers:   http://localhost:3001/...
@@ -343,17 +310,6 @@
 
     <script>
         (async function initHome() {
-            function positionLegendAboveFooter() {
-                const legend = document.getElementById('legend');
-                const footer = document.getElementById('footer');
-                if (!legend || !footer) return;
-
-                // Place legend above the fixed footer with a small gap.
-                const footerH = footer.getBoundingClientRect().height || 0;
-                const gap = 14;
-                legend.style.bottom = `${Math.max(10, Math.round(footerH + gap))}px`;
-            }
-
             function applyBaseToAnchors(rootEl) {
                 const base = window.SITE_BASE || '';
                 if (!base || !rootEl) return;
@@ -372,13 +328,8 @@
                     const isCollapsed = infoPanel.classList.toggle('is-collapsed');
                     infoToggle.textContent = isCollapsed ? 'Show info' : 'Hide info';
                     infoToggle.setAttribute('aria-expanded', isCollapsed ? 'false' : 'true');
-                    positionLegendAboveFooter();
                 });
             }
-
-            // Keep legend clear of the fixed footer (handles wrapping/responsive layouts).
-            positionLegendAboveFooter();
-            window.addEventListener('resize', () => requestAnimationFrame(positionLegendAboveFooter), { passive: true });
 
             // Load navbar component (best-effort)
             try {
