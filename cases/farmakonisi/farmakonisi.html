@@ -384,8 +384,6 @@
 
         // Enable user-friendly navigation controls (zoom buttons + compass).
         map.addControl(new mapboxgl.NavigationControl(), 'top-right');
-        // Keep page scrolling smooth for the story; users can still zoom via buttons/pinch.
-        map.scrollZoom.disable();
 
         // Create a inset map if enabled in config.js
         if (config.inset) {
