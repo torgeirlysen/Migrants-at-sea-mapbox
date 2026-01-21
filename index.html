@@ -159,6 +159,15 @@
                     id: 'sar-fill',
                     type: 'fill',
                     source: 'sar-zones',
+                    // Exclude Greece SRR here; it will be loaded from its combined GeoJSON below.
+                    filter: ['all',
+                        ['!=', ['get', 'country'], 'Greece'],
+                        ['!=', ['get', 'country'], 'Italy'],
+                        ['!=', ['get', 'country'], 'Malta'],
+                        ['!=', ['get', 'country'], 'Tunisia'],
+                        ['!=', ['get', 'country'], 'Libya'],
+                        ['!=', ['get', 'country'], 'Egypt']
+                    ],
                     paint: {
                         'fill-color': ['coalesce', ['get', 'fill'], '#ff8c00'],
                         'fill-opacity': ['coalesce', ['get', 'fill-opacity'], 0.14]
@@ -169,6 +178,14 @@
                     id: 'sar-outline',
                     type: 'line',
                     source: 'sar-zones',
+                    filter: ['all',
+                        ['!=', ['get', 'country'], 'Greece'],
+                        ['!=', ['get', 'country'], 'Italy'],
+                        ['!=', ['get', 'country'], 'Malta'],
+                        ['!=', ['get', 'country'], 'Tunisia'],
+                        ['!=', ['get', 'country'], 'Libya'],
+                        ['!=', ['get', 'country'], 'Egypt']
+                    ],
                     paint: {
                         'line-color': ['coalesce', ['get', 'stroke'], '#ff8c00'],
                         'line-width': ['coalesce', ['get', 'stroke-width'], 2],
@@ -180,6 +197,14 @@
                     id: 'sar-labels',
                     type: 'symbol',
                     source: 'sar-zones',
+                    filter: ['all',
+                        ['!=', ['get', 'country'], 'Greece'],
+                        ['!=', ['get', 'country'], 'Italy'],
+                        ['!=', ['get', 'country'], 'Malta'],
+                        ['!=', ['get', 'country'], 'Tunisia'],
+                        ['!=', ['get', 'country'], 'Libya'],
+                        ['!=', ['get', 'country'], 'Egypt']
+                    ],
                     layout: {
                         'text-field': ['format', ['get', 'name'], { 'font-scale': 1.0 }, '\n', ['get', 'authority'], { 'font-scale': 0.8 }],
                         'text-size': 12,
@@ -192,6 +217,264 @@
                         'text-halo-width': 1.2
                     }
                 }, sarBeforeId);
+
+                // --- Greece SRR (combined) ---
+                if (cfg.greeceSrrUrl) {
+                    map.addSource('greece-srr', { type: 'geojson', data: cfg.greeceSrrUrl });
+
+                    map.addLayer({
+                        id: 'greece-srr-fill',
+                        type: 'fill',
+                        source: 'greece-srr',
+                        paint: {
+                            'fill-color': ['coalesce', ['get', 'fill'], '#33a02c'],
+                            'fill-opacity': ['coalesce', ['get', 'fill-opacity'], 0.25]
+                        }
+                    }, sarBeforeId);
+
+                    map.addLayer({
+                        id: 'greece-srr-outline',
+                        type: 'line',
+                        source: 'greece-srr',
+                        paint: {
+                            'line-color': ['coalesce', ['get', 'stroke'], '#33a02c'],
+                            'line-width': ['coalesce', ['get', 'stroke-width'], 2],
+                            'line-opacity': 0.95
+                        }
+                    }, sarBeforeId);
+
+                    map.addLayer({
+                        id: 'greece-srr-labels',
+                        type: 'symbol',
+                        source: 'greece-srr',
+                        layout: {
+                            'text-field': ['format', 'Greece SRR', { 'font-scale': 1.0 }, '\n', ['get', 'authority'], { 'font-scale': 0.8 }],
+                            'text-size': 12,
+                            'text-font': ['DIN Pro Medium', 'Arial Unicode MS Regular'],
+                            'text-anchor': 'center'
+                        },
+                        paint: {
+                            'text-color': '#1a1a1a',
+                            'text-halo-color': '#ffffff',
+                            'text-halo-width': 1.2
+                        }
+                    }, sarBeforeId);
+                }
+
+                // --- Italy SRR (combined) ---
+                if (cfg.italySrrUrl) {
+                    map.addSource('italy-srr', { type: 'geojson', data: cfg.italySrrUrl });
+
+                    map.addLayer({
+                        id: 'italy-srr-fill',
+                        type: 'fill',
+                        source: 'italy-srr',
+                        paint: {
+                            'fill-color': ['coalesce', ['get', 'fill'], '#ff8c00'],
+                            'fill-opacity': ['coalesce', ['get', 'fill-opacity'], 0.14]
+                        }
+                    }, sarBeforeId);
+
+                    map.addLayer({
+                        id: 'italy-srr-outline',
+                        type: 'line',
+                        source: 'italy-srr',
+                        paint: {
+                            'line-color': ['coalesce', ['get', 'stroke'], '#ff8c00'],
+                            'line-width': ['coalesce', ['get', 'stroke-width'], 2],
+                            'line-opacity': 0.95
+                        }
+                    }, sarBeforeId);
+
+                    map.addLayer({
+                        id: 'italy-srr-labels',
+                        type: 'symbol',
+                        source: 'italy-srr',
+                        layout: {
+                            'text-field': ['format', 'Italy SRR', { 'font-scale': 1.0 }, '\n', ['get', 'authority'], { 'font-scale': 0.8 }],
+                            'text-size': 12,
+                            'text-font': ['DIN Pro Medium', 'Arial Unicode MS Regular'],
+                            'text-anchor': 'center'
+                        },
+                        paint: {
+                            'text-color': '#1a1a1a',
+                            'text-halo-color': '#ffffff',
+                            'text-halo-width': 1.2
+                        }
+                    }, sarBeforeId);
+                }
+
+                // --- Malta SRR ---
+                if (cfg.maltaSrrUrl) {
+                    map.addSource('malta-srr', { type: 'geojson', data: cfg.maltaSrrUrl });
+
+                    map.addLayer({
+                        id: 'malta-srr-fill',
+                        type: 'fill',
+                        source: 'malta-srr',
+                        paint: {
+                            'fill-color': ['coalesce', ['get', 'fill'], '#ff8c00'],
+                            'fill-opacity': ['coalesce', ['get', 'fill-opacity'], 0.14]
+                        }
+                    }, sarBeforeId);
+
+                    map.addLayer({
+                        id: 'malta-srr-outline',
+                        type: 'line',
+                        source: 'malta-srr',
+                        paint: {
+                            'line-color': ['coalesce', ['get', 'stroke'], '#ff8c00'],
+                            'line-width': ['coalesce', ['get', 'stroke-width'], 2],
+                            'line-opacity': 0.95
+                        }
+                    }, sarBeforeId);
+
+                    map.addLayer({
+                        id: 'malta-srr-labels',
+                        type: 'symbol',
+                        source: 'malta-srr',
+                        layout: {
+                            'text-field': ['format', 'Malta SRR', { 'font-scale': 1.0 }, '\n', ['get', 'authority'], { 'font-scale': 0.8 }],
+                            'text-size': 12,
+                            'text-font': ['DIN Pro Medium', 'Arial Unicode MS Regular'],
+                            'text-anchor': 'center'
+                        },
+                        paint: {
+                            'text-color': '#1a1a1a',
+                            'text-halo-color': '#ffffff',
+                            'text-halo-width': 1.2
+                        }
+                    }, sarBeforeId);
+                }
+
+                // --- Tunisia SRR ---
+                if (cfg.tunisiaSrrUrl) {
+                    map.addSource('tunisia-srr', { type: 'geojson', data: cfg.tunisiaSrrUrl });
+
+                    map.addLayer({
+                        id: 'tunisia-srr-fill',
+                        type: 'fill',
+                        source: 'tunisia-srr',
+                        paint: {
+                            'fill-color': ['coalesce', ['get', 'fill'], '#ff8c00'],
+                            'fill-opacity': ['coalesce', ['get', 'fill-opacity'], 0.14]
+                        }
+                    }, sarBeforeId);
+
+                    map.addLayer({
+                        id: 'tunisia-srr-outline',
+                        type: 'line',
+                        source: 'tunisia-srr',
+                        paint: {
+                            'line-color': ['coalesce', ['get', 'stroke'], '#ff8c00'],
+                            'line-width': ['coalesce', ['get', 'stroke-width'], 2],
+                            'line-opacity': 0.95
+                        }
+                    }, sarBeforeId);
+
+                    map.addLayer({
+                        id: 'tunisia-srr-labels',
+                        type: 'symbol',
+                        source: 'tunisia-srr',
+                        layout: {
+                            'text-field': ['format', 'Tunisia SRR', { 'font-scale': 1.0 }, '\n', ['get', 'authority'], { 'font-scale': 0.8 }],
+                            'text-size': 12,
+                            'text-font': ['DIN Pro Medium', 'Arial Unicode MS Regular'],
+                            'text-anchor': 'center'
+                        },
+                        paint: {
+                            'text-color': '#1a1a1a',
+                            'text-halo-color': '#ffffff',
+                            'text-halo-width': 1.2
+                        }
+                    }, sarBeforeId);
+                }
+
+                // --- Libya SRR ---
+                if (cfg.libyaSrrUrl) {
+                    map.addSource('libya-srr', { type: 'geojson', data: cfg.libyaSrrUrl });
+
+                    map.addLayer({
+                        id: 'libya-srr-fill',
+                        type: 'fill',
+                        source: 'libya-srr',
+                        paint: {
+                            'fill-color': ['coalesce', ['get', 'fill'], '#ff8c00'],
+                            'fill-opacity': ['coalesce', ['get', 'fill-opacity'], 0.14]
+                        }
+                    }, sarBeforeId);
+
+                    map.addLayer({
+                        id: 'libya-srr-outline',
+                        type: 'line',
+                        source: 'libya-srr',
+                        paint: {
+                            'line-color': ['coalesce', ['get', 'stroke'], '#ff8c00'],
+                            'line-width': ['coalesce', ['get', 'stroke-width'], 2],
+                            'line-opacity': 0.95
+                        }
+                    }, sarBeforeId);
+
+                    map.addLayer({
+                        id: 'libya-srr-labels',
+                        type: 'symbol',
+                        source: 'libya-srr',
+                        layout: {
+                            'text-field': ['format', 'Libya SRR', { 'font-scale': 1.0 }, '\n', ['get', 'authority'], { 'font-scale': 0.8 }],
+                            'text-size': 12,
+                            'text-font': ['DIN Pro Medium', 'Arial Unicode MS Regular'],
+                            'text-anchor': 'center'
+                        },
+                        paint: {
+                            'text-color': '#1a1a1a',
+                            'text-halo-color': '#ffffff',
+                            'text-halo-width': 1.2
+                        }
+                    }, sarBeforeId);
+                }
+
+                // --- Egypt SRR ---
+                if (cfg.egyptSrrUrl) {
+                    map.addSource('egypt-srr', { type: 'geojson', data: cfg.egyptSrrUrl });
+
+                    map.addLayer({
+                        id: 'egypt-srr-fill',
+                        type: 'fill',
+                        source: 'egypt-srr',
+                        paint: {
+                            'fill-color': ['coalesce', ['get', 'fill'], '#ff8c00'],
+                            'fill-opacity': ['coalesce', ['get', 'fill-opacity'], 0.14]
+                        }
+                    }, sarBeforeId);
+
+                    map.addLayer({
+                        id: 'egypt-srr-outline',
+                        type: 'line',
+                        source: 'egypt-srr',
+                        paint: {
+                            'line-color': ['coalesce', ['get', 'stroke'], '#ff8c00'],
+                            'line-width': ['coalesce', ['get', 'stroke-width'], 2],
+                            'line-opacity': 0.95
+                        }
+                    }, sarBeforeId);
+
+                    map.addLayer({
+                        id: 'egypt-srr-labels',
+                        type: 'symbol',
+                        source: 'egypt-srr',
+                        layout: {
+                            'text-field': ['format', 'Egypt SRR', { 'font-scale': 1.0 }, '\n', ['get', 'authority'], { 'font-scale': 0.8 }],
+                            'text-size': 12,
+                            'text-font': ['DIN Pro Medium', 'Arial Unicode MS Regular'],
+                            'text-anchor': 'center'
+                        },
+                        paint: {
+                            'text-color': '#1a1a1a',
+                            'text-halo-color': '#ffffff',
+                            'text-halo-width': 1.2
+                        }
+                    }, sarBeforeId);
+                }
 
                 // --- Case markers (click to open story) ---
                 const base = window.SITE_BASE || '';
