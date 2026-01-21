@@ -160,6 +160,75 @@
                 margin-top: 0;
             }
         }
+
+        /* --- Map legend (Home) --- */
+        .map-legend {
+            position: fixed;
+            left: 14px;
+            bottom: 92px; /* keep clear of fixed footer */
+            z-index: 6;
+            pointer-events: auto;
+            color: #fafafa;
+            background: rgba(68, 68, 68, 0.85);
+            backdrop-filter: blur(6px);
+            border-radius: 10px;
+            padding: 10px 12px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
+            max-width: min(380px, calc(100vw - 28px));
+            font-size: 13px;
+            line-height: 18px;
+        }
+
+        .map-legend-title {
+            font-weight: 700;
+            margin: 0 0 8px 0;
+            font-size: 13px;
+        }
+
+        .legend-row {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin: 6px 0;
+            white-space: nowrap;
+        }
+
+        .legend-swatch {
+            flex: 0 0 auto;
+            display: inline-block;
+        }
+
+        .legend-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 999px;
+            border: 2px solid rgba(255, 255, 255, 0.95);
+            box-sizing: border-box;
+        }
+
+        .legend-area {
+            width: 18px;
+            height: 12px;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        .legend-note {
+            margin-top: 8px;
+            opacity: 0.85;
+            font-size: 12px;
+            line-height: 16px;
+            white-space: normal;
+        }
+
+        @media (max-width: 750px) {
+            .map-legend {
+                left: 10px;
+                right: 10px;
+                bottom: 96px;
+                max-width: none;
+            }
+        }
     </style>
 </head>
 
@@ -168,6 +237,26 @@
     <div id="navbar"></div>
 
     <div id="map"></div>
+
+    <div id="legend" class="map-legend" role="region" aria-label="Map legend">
+        <p class="map-legend-title">Map legend</p>
+        <div class="legend-row">
+            <span class="legend-swatch legend-dot" style="background:#ffd400;"></span>
+            <span>Deaths / missing (yellow dots)</span>
+        </div>
+        <div class="legend-row">
+            <span class="legend-swatch legend-dot" style="background:#ff5e00;"></span>
+            <span>Case locations (click to open story)</span>
+        </div>
+        <div class="legend-row">
+            <span class="legend-swatch legend-area" style="background: rgba(255, 140, 0, 0.18); border: 2px solid rgba(255, 140, 0, 0.95);"></span>
+            <span>SAR / SRR regions (shaded areas + boundary lines)</span>
+        </div>
+        <div class="legend-note">
+            Tip: if the deaths dots in the basemap use a different yellow, update the legend color to match.
+        </div>
+    </div>
+
     <div id="story">
         <div id="features">
             <div id="home-info" class="step active lefty">
@@ -201,6 +290,17 @@
 
     <script>
         (async function initHome() {
+            function positionLegendAboveFooter() {
+                const legend = document.getElementById('legend');
+                const footer = document.getElementById('footer');
+                if (!legend || !footer) return;
+
+                // Place legend above the fixed footer with a small gap.
+                const footerH = footer.getBoundingClientRect().height || 0;
+                const gap = 14;
+                legend.style.bottom = `${Math.max(10, Math.round(footerH + gap))}px`;
+            }
+
             function applyBaseToAnchors(rootEl) {
                 const base = window.SITE_BASE || '';
                 if (!base || !rootEl) return;
@@ -211,6 +311,10 @@
                     a.setAttribute('href', base + href);
                 });
             }
+
+            // Keep legend clear of the fixed footer (handles wrapping/responsive layouts).
+            positionLegendAboveFooter();
+            window.addEventListener('resize', () => requestAnimationFrame(positionLegendAboveFooter), { passive: true });
 
             // Load navbar component (best-effort)
             try {
