@@ -14,6 +14,12 @@ window.HOME_CONFIG = {
     pitch: 0
   },
   sarZonesUrl: 'data/sar-zones-data.geojson',
+  greeceSrrUrl: 'data/greece_srr_combined.geojson',
+  italySrrUrl: 'data/italy_srr_combined.geojson',
+  maltaSrrUrl: 'data/malta_srr.geojson',
+  tunisiaSrrUrl: 'data/tunisia_srr.geojson',
+  libyaSrrUrl: 'data/libya_srr.geojson',
+  egyptSrrUrl: 'data/egypt_srr.geojson',
   cases: [
     { title: 'Pylos (Adriana)', url: '/cases/pylos/pylos.html', coordinates: [21.2340, 36.4125] },
     { title: 'Farmakonisi', url: '/cases/farmakonisi/farmakonisi.html', coordinates: [14.612838, 37.347632] },
