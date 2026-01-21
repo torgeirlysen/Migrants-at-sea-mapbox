@@ -2,7 +2,7 @@ window.HOME_CONFIG = {
   accessToken: 'pk.eyJ1IjoibHJqYWNvYnMiLCJhIjoiY21rM3BoanV0MHBhYjNlcXk0OTZ1bXR5eiJ9.c9gJtz4_0bhKpi50XaKODg',
   style: 'mapbox://styles/lrjacobs/cmke18zhh00g701sc3nm7fyi1',
   projection: 'mercator',
-  inset: true,
+  inset: false,
   insetOptions: {
     markerColor: 'orange'
   },
