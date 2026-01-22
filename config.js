@@ -21,9 +21,9 @@ window.HOME_CONFIG = {
   libyaSrrUrl: 'data/libya_srr.geojson',
   egyptSrrUrl: 'data/egypt_srr.geojson',
   cases: [
-    { title: 'Pylos (Adriana)', url: '/cases/pylos/pylos.html', coordinates: [21.2340, 36.4125] },
-    { title: 'Farmakonisi', url: '/cases/farmakonisi/farmakonisi.html', coordinates: [14.612838, 37.347632] },
-    { title: 'Pserimos', url: '/cases/pserimos/pserimos.html', coordinates: [12.612838, 34.347632] }
+    { title: 'Pylos (Adriana)', url: '/cases/pylos/pylos.html', coordinates: [23.9769, 32.0786] },
+    { title: 'Farmakonisi', url: '/cases/farmakonisi/farmakonisi.html', coordinates: [27.28889, 37.35611] },
+    { title: 'Pserimos', url: '/cases/pserimos/pserimos.html', coordinates: [27.17173851, 36.95042645] }
   ]
 };
 
